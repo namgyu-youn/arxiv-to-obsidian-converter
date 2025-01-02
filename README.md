@@ -1,67 +1,131 @@
 # arXiv to Obsidian Converter
+This is **not obsidian-plugin**. Inspired by [arxiv-assistant](https://github.com/Puer-Hyun/arxiv-assistant).
 
-A tool to convert arXiv papers into Obsidian notes with automatic PDF processing and metadata extraction.
+Automatically converts arXiv papers into well-formatted Obsidian notes. It downloads papers using arXiv IDs, processes their content, and creates structured notes with metadata, summaries, and key points.
 
-## Setup
+⬇️ Sample Output ⬇️
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/arxiv_to_obsidian.git
-cd arxiv_to_obsidian
+```mermaid
+flowchart TD
+    subgraph Paper Fetching
+        A[ArxivPaper]
+    end
+
+    subgraph Processing
+        B[PDFProcessor]
+    end
+
+    subgraph Note Creation
+        C[NoteCreator]
+    end
+
+    A -->|Metadata & PDF| B
+    B -->|Processed Content| C
+    C -->|Obsidian Note| D[Output]
+
+    classDef fetch fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef create fill:#bfb,stroke:#333,stroke-width:2px;
+    classDef output fill:#fbb,stroke:#333,stroke-width:2px;
+
+    class A fetch;
+    class B process;
+    class C create;
+    class D output;
 ```
 
-2. Install the required system dependencies:
-```bash
+## ✨ Features
+
+- Downloads papers directly from arXiv using paper IDs
+- Extracts citation counts from Semantic Scholar
+- Processes PDF content with OCR support
+- Handles two-column academic paper layouts
+- Creates well-structured Obsidian notes with:
+    - Paper metadata
+    - Citation information
+    - Research field categorization
+    - Key points section
+    - Personal notes template
+    - Formatted content with proper paragraph breaks
+
+
+
+## ➕ Prerequisites
+
+- Python 3.12 or higher
+- Tesseract OCR
+- Poppler Utils
+- Poetry (optional)
+- Docker (optional)
+
+## 🚩 Installation
+### Option 1: Standard Python Setup
+
+Clone the repository
+
+bashCopygit clone https://github.com/yourusername/arxiv-to-obsidian.git
+cd arxiv-to-obsidian
+
+Install system dependencies
+
+``` bash
 # Ubuntu/Debian
 sudo apt-get update
 sudo apt-get install tesseract-ocr poppler-utils
 
 # macOS
 brew install tesseract poppler
+Install Python dependencies
+bashCopypip install -r requirements.txt
 ```
 
-3. Install Python dependencies:
+### Option 2: Using Poetry
+
+Install Poetry
+
 ```bash
-pip install -r requirements.txt
+curl -sSL https://install.python-poetry.org | python3 -
 ```
 
-## Usage
+Install dependencies
 
-Basic usage:
 ```bash
-python main.py 2412.16003
+poetry install
 ```
 
-Specify output directory:
+### Option 3: Using Docker
 ```bash
-python main.py 2412.16003 -o /path/to/output
+docker-compose up --build
 ```
 
-## Features
+## 🚀 Usage
+Basic Usage
+bashCopy# Using Python directly
+python main.py 2304.08485
 
-- Fetches paper metadata from arXiv
-- Downloads PDF files
-- Extracts citation count from Semantic Scholar
-- Processes PDF content with OCR support
-- Creates well-formatted Obsidian notes
-- Automatic section identification
+# Using Poetry
+poetry run arxiv-to-obsidian 2304.08485
 
-## Project Structure
+# Using Docker
+```
+docker run -v $(pwd)/output:/app/output arxiv-to-obsidian 2304.08485
+```
+Output Directory can be customized :
+```bash
+python main.py 2304.08485 --output /path/to/output
+```
 
 ```
-arxiv_to_obsidian/
+📁 Project Structure
+Copyarxiv_to_obsidian/
 ├── requirements.txt
 ├── README.md
 ├── scripts/
 │   ├── __init__.py
-│   ├── arxiv_fetcher.py     # arXiv paper related functionality
+│   ├── arxiv_fetcher.py     # arXiv paper functionality
 │   ├── pdf_processor.py     # PDF processing
 │   └── note_creator.py      # Obsidian note creation
 ├── main.py                  # Main execution file
-└── tests/                   # Test files (optional)
+└── tests/                   # Test files
     └── __init__.py
 ```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
