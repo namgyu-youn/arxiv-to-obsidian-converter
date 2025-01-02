@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  arxiv-to-obsidian:
+    build: .
+    volumes:
+      - ./output:/app/output
+    command: ["--output", "/app/output"]
