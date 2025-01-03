@@ -1,46 +1,26 @@
 # arXiv to Obsidian Converter
-This is **not obsidian-plugin**. Inspired by [arxiv-assistant](https://github.com/Puer-Hyun/arxiv-assistant).
+This is **certified obsidian-plugin**. I suffured from Bug, so made simple text extractor using OCR.
+- See also : [obsidian-citation-plugin](https://github.com/hans/obsidian-citation-plugin), [arxiv-assistant](https://github.com/Puer-Hyun/arxiv-assistant).
 
 Automatically converts arXiv papers into well-formatted Obsidian notes. It downloads papers using arXiv IDs, processes their content, and creates structured notes with metadata, summaries, and key points.
 
 ⬇️ Sample Output ⬇️
 
-```mermaid
-flowchart TD
-    subgraph Paper Fetching
-        A[ArxivPaper]
-    end
+<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/main/src/sample_output.png">
 
-    subgraph Processing
-        B[PDFProcessor]
-    end
+<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/main/src/sample_terminal.png">
 
-    subgraph Note Creation
-        C[NoteCreator]
-    end
+<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/main/src/sample_obsidian.png">
 
-    A -->|Metadata & PDF| B
-    B -->|Processed Content| C
-    C -->|Obsidian Note| D[Output]
 
-    classDef fetch fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef create fill:#bfb,stroke:#333,stroke-width:2px;
-    classDef output fill:#fbb,stroke:#333,stroke-width:2px;
 
-    class A fetch;
-    class B process;
-    class C create;
-    class D output;
-```
 
 ## ✨ Features
 
 - Downloads papers directly from arXiv using paper IDs
 - Extracts citation counts from Semantic Scholar
-- Processes PDF content with OCR support
-- Handles two-column academic paper layouts
-- Creates well-structured Obsidian notes with:
+- Processes PDF content with **OCR support**
+- Creates well-structured **Obsidian notes** with:
     - Paper metadata
     - Citation information
     - Research field categorization
@@ -53,20 +33,17 @@ flowchart TD
 ## ➕ Prerequisites
 
 - Python 3.12 or higher
-- Tesseract OCR
-- Poppler Utils
-- Poetry (optional)
-- Docker (optional)
+- Tesseract : OCR
+- Poetry, Docker
 
-## 🚩 Installation
-### Option 1: Standard Python Setup
-
-Clone the repository
-
-bashCopygit clone https://github.com/yourusername/arxiv-to-obsidian.git
+## 🚩 How to use?
+### Step 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/arxiv-to-obsidian.git
 cd arxiv-to-obsidian
+```
 
-Install system dependencies
+### Step 2. Install system dependencies
 
 ``` bash
 # Ubuntu/Debian
@@ -79,41 +56,16 @@ Install Python dependencies
 bashCopypip install -r requirements.txt
 ```
 
-### Option 2: Using Poetry
-
-Install Poetry
-
+### Step 3: Using Docker
 ```bash
-curl -sSL https://install.python-poetry.org | python3 -
+docker build .
 ```
 
-Install dependencies
-
-```bash
-poetry install
+### Step 4. Run poetry!
+```
+poetry run arxiv-to-obsidian 2304.08485 # Just Input arXiv ID!
 ```
 
-### Option 3: Using Docker
-```bash
-docker-compose up --build
-```
-
-## 🚀 Usage
-Basic Usage
-bashCopy# Using Python directly
-python main.py 2304.08485
-
-# Using Poetry
-poetry run arxiv-to-obsidian 2304.08485
-
-# Using Docker
-```
-docker run -v $(pwd)/output:/app/output arxiv-to-obsidian 2304.08485
-```
-Output Directory can be customized :
-```bash
-python main.py 2304.08485 --output /path/to/output
-```
 
 ```
 📁 Project Structure
