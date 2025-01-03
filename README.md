@@ -1,12 +1,12 @@
 # arXiv to Obsidian Converter
-This is **certified obsidian-plugin**. I suffured from too many Bugs, so made simple text extractor using OCR.
+This is **not certified obsidian-plugin**. I suffured from too many Bugs(🐛) using Obsidian, so made simple text extractor using OCR.
 - See also : [obsidian-citation-plugin](https://github.com/hans/obsidian-citation-plugin), [arxiv-assistant](https://github.com/Puer-Hyun/arxiv-assistant).
 
-Automatically converts arXiv papers into well-formatted Obsidian notes. It downloads papers using arXiv IDs, processes their content, and creates structured notes with metadata, summaries, and key points.
+Converts arXiv papers into well-formatted Obsidian notes. It downloads papers using arXiv IDs, processes their content, and creates structured notes with metadata, summaries, and key points.
 
-If you extracted paper, then anything can be possible (ex. LLM summarization)
+With extracted content, you can do anything you want! (ex. Summarization using llm, Post somewhere, .. etc)
 
-⬇️ Sample Output ⬇️
+**⬇️ Sample Output ⬇️**
 
 <img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/blob/main/src/sample_obsidian.png">
 
