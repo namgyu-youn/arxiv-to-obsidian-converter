@@ -1,24 +1,26 @@
 # arXiv to Obsidian Converter
-This is **certified obsidian-plugin**. I suffured from Bug, so made simple text extractor using OCR.
+This is **certified obsidian-plugin**. I suffured from too many Bugs, so made simple text extractor using OCR.
 - See also : [obsidian-citation-plugin](https://github.com/hans/obsidian-citation-plugin), [arxiv-assistant](https://github.com/Puer-Hyun/arxiv-assistant).
 
 Automatically converts arXiv papers into well-formatted Obsidian notes. It downloads papers using arXiv IDs, processes their content, and creates structured notes with metadata, summaries, and key points.
 
+If you extracted paper, then anything can be possible (ex. LLM summarization)
+
 ⬇️ Sample Output ⬇️
 
-<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/main/src/sample_output.png">
+<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/blob/main/src/sample_obsidian.png">
 
-<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/main/src/sample_terminal.png">
+<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/blob/main/src/sample_output.png">
 
-<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/main/src/sample_obsidian.png">
+<img width="900" alt="image" src="https://github.com/Namgyu-Youn/arxiv-to-obsidian-converter/blob/main/src/sample_terminal.png">
 
 
 
 
 ## ✨ Features
 
-- Downloads papers directly from arXiv using paper IDs
-- Extracts citation counts from Semantic Scholar
+- Downloads papers directly **from arXiv** using paper IDs
+- **Extracts citation** using Semantic Scholar
 - Processes PDF content with **OCR support**
 - Creates well-structured **Obsidian notes** with:
     - Paper metadata
@@ -28,13 +30,6 @@ Automatically converts arXiv papers into well-formatted Obsidian notes. It downl
     - Personal notes template
     - Formatted content with proper paragraph breaks
 
-
-
-## ➕ Prerequisites
-
-- Python 3.12 or higher
-- Tesseract : OCR
-- Poetry, Docker
 
 ## 🚩 How to use?
 ### Step 1. Clone the repository
@@ -81,3 +76,7 @@ Copyarxiv_to_obsidian/
 └── tests/                   # Test files
     └── __init__.py
 ```
+
+## 👥 Contribution guide
+Thanks for your interest. I always enjoy meaningful collaboration. <br/>
+Do you have any question or bug?? Then please submit **ISSUE**!
