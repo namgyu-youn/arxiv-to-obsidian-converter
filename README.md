@@ -34,29 +34,11 @@ If you extracted paper, then anything can be possible (ex. LLM summarization)
 ## 🚩 How to use?
 ### Step 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/arxiv-to-obsidian.git
+git clone https://github.com/Namgyu-Youn/arxiv-to-obsidian.git
 cd arxiv-to-obsidian
-```
-
-### Step 2. Install system dependencies
-
-``` bash
-# Ubuntu/Debian
-sudo apt-get update
-sudo apt-get install tesseract-ocr poppler-utils
-
-# macOS
-brew install tesseract poppler
-Install Python dependencies
-bashCopypip install -r requirements.txt
-```
-
-### Step 3: Using Docker
-```bash
 docker build .
 ```
-
-### Step 4. Run poetry!
+### Step 2. Just run poetry!
 ```
 poetry run arxiv-to-obsidian 2304.08485 # Just Input arXiv ID!
 ```
