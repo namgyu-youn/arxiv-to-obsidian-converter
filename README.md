@@ -36,29 +36,9 @@ With extracted content, you can do anything you want! (ex. Summarization using l
 ```bash
 git clone https://github.com/Namgyu-Youn/arxiv-to-obsidian.git
 cd arxiv-to-obsidian
-docker build .
-```
-### Step 2. Just run poetry!
-```
-poetry run arxiv-to-obsidian 2304.08485 # Just Input arXiv ID!
 ```
 
-
+### Step 2. Just run uv!
 ```
-📁 Project Structure
-Copyarxiv_to_obsidian/
-├── requirements.txt
-├── README.md
-├── scripts/
-│   ├── __init__.py
-│   ├── arxiv_fetcher.py     # arXiv paper functionality
-│   ├── pdf_processor.py     # PDF processing
-│   └── note_creator.py      # Obsidian note creation
-├── main.py                  # Main execution file
-└── tests/                   # Test files
-    └── __init__.py
+uv run arxiv-to-obsidian 2304.08485 # Just Input arXiv ID!
 ```
-
-## 👥 Contribution guide
-Thanks for your interest. I always enjoy meaningful collaboration. <br/>
-Do you have any question or bug?? Then please submit **ISSUE**!
